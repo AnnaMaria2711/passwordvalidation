@@ -52,4 +52,44 @@ public class PasswordvalidationTest {
 
     }
 
+    @Test
+    void PasswordvalidationTest_ifPasswordIsWeak_returnStringBadPassword(){
+        // GIVEN
+
+
+        String eingabePasswort = "Password1";
+
+
+        // WHEN
+
+        boolean checkForWeakPassword = Passwordvalidation.checkForWeakPassword(eingabePasswort);
+
+        // THEN
+
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+        assertTrue(checkForWeakPassword);
+
+    }
+
+    @Test
+    void PasswordvalidationTest_ifPasswordContainsSpecialCharacters_returnTrue(){
+        // GIVEN
+
+        String pw = "3@anssNJw-asda";
+
+        // WHEN
+
+        boolean checkForSpecialCharacters = Passwordvalidation.checkForSpecialCharacter(pw);
+
+        // THEN
+
+        assertTrue(checkForSpecialCharacters);
+
+
+    }
     }
