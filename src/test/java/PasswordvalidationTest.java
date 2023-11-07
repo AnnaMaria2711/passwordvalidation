@@ -41,7 +41,7 @@ public class PasswordvalidationTest {
     void PasswordvalidationTest_ifPasswordIncludesUpperandLowercase_returnTrue() {
         //GIVEN
 
-        String password = "2Java0Boot2Camp3";
+        String password ="2Java0Boot2Camp3";
 
         // WHEN
 
