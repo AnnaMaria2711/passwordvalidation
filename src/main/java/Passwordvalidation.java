@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.security.SecureRandom;
 public class Passwordvalidation {
 
     public static void main(String[] args) {
@@ -87,14 +87,31 @@ public class Passwordvalidation {
     }
 
     public static boolean checkForSpecialCharacter(String pw) {
-        for(int i = 0; i <= pw.length() ; i++){
+        for (int i = 0; i <= pw.length(); i++) {
             boolean containsSpecialChars = pw.matches("(.*[$&+,:;=?@#|'<>.-^*()%!]).*");
-                    if(containsSpecialChars){
-                        return true;
+            if (containsSpecialChars) {
+                return true;
             }
 
         }
         return false;
     }
 
+
+    public static String makePassword(int length) {
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+        char[] password = new char[length];
+
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(CHARACTERS.length());
+            password[i] = CHARACTERS.charAt(randomIndex);
+        }
+
+        return new String(password);
+    }
+
+
+
 }
+

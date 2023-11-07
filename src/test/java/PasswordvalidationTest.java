@@ -1,6 +1,7 @@
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PasswordvalidationTest {
@@ -91,5 +92,20 @@ public class PasswordvalidationTest {
         assertTrue(checkForSpecialCharacters);
 
 
+    }
+
+    @Test
+    void PasswordvalidationTest_createRandomPassword(){
+        // GIVEN
+
+        int length = 10;
+
+        // WHEN
+
+        String generatedPassword = Passwordvalidation.makePassword(length);
+
+        // THEN
+
+        assertTrue(generatedPassword.matches("[a-zA-Z0-9]+"));
     }
     }
