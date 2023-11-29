@@ -17,11 +17,7 @@ public class Passwordvalidation {
 
 
     public static boolean checkForLength(String password) {
-        if (password.length() >= 8) {
-            return true;
-        } else {
-            return false;
-        }
+        return password.length() >= 8;
     }
 
     public static boolean checkForNumbers(String password) {
